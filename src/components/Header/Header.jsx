@@ -8,7 +8,7 @@ function Navbar() {
   return (
     <header className="header">
       <div className="logo">
-        <img scr={logo} alt="Logo" />
+        <img src={logo} alt="Logo" />
       </div>
 
       <div className="navbar">

@@ -1,0 +1,87 @@
+@use "../../styles/partials/font-face" as *;
+@use "../../styles/partials/breakpoints" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/colors" as *;
+@use "../../styles//partials/paddings-margins" as *;
+@use "../../styles/partials/components" as *;
+.header {
+  @include tablet {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 $padding-or-margin-tablet;
+  }
+  @include desktop {
+    margin: 0 $padding-or-margin-desktop;
+  }
+}
+.logo {
+  display: flex;
+  justify-content: center;
+  padding: 0 $padding-or-margin;
+  align-items: center;
+}
+.navbar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: $padding-or-margin;
+
+  @include tablet {
+    flex-direction: row;
+    align-items: center;
+    // justify-content: space-between;
+  }
+  margin: $padding-or-margin;
+  &__search {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: $padding-or-margin;
+  }
+  &__search-box {
+    flex-grow: 1;
+    border: 2px solid $Mercury;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 300px;
+  }
+
+  &__search-icon {
+    @include icon;
+    padding-right: $half-padding-or-margin;
+  }
+
+  &__search-input {
+    height: 36px;
+    border-width: 0;
+    flex-grow: 1;
+  }
+  &__button {
+    @include primary-button;
+  }
+  &__button-icon {
+    @include icon;
+  }
+  &__button-text {
+    @include button__text;
+  }
+  &__avatar {
+    @include avatar;
+    &--mobile {
+      @extend .navbar__avatar;
+      @include tablet {
+        display: none;
+      }
+    }
+    &--tablet {
+      @extend .navbar__avatar;
+      display: none;
+      @include tablet {
+        display: inline;
+      }
+    }
+  }
+}

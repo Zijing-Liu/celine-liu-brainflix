@@ -1,0 +1,53 @@
+@use "./breakpoints.scss" as *;
+@use "./colors" as *;
+@use "./font-face" as *;
+@use "./typography" as *;
+@use "./paddings-margins" as *;
+@mixin primary-button {
+  height: 40px;
+  width: 100%;
+  color: $White;
+  border-width: 0;
+  border-radius: 4px;
+  background-color: $BrainFlix-Blue;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+  @include tablet {
+    min-width: 150px;
+  }
+  @include desktop {
+    min-width: 200px;
+  }
+}
+@mixin button__text {
+  @include buttons;
+
+  color: white;
+  flex-grow: 1;
+  padding-right: $padding-or-margin;
+  margin-right: 24px;
+  text-align: center; // Center align the text
+}
+// icon color and text height should follow the text i
+@mixin icon {
+  @include buttons;
+  padding-left: $padding-or-margin;
+}
+
+@mixin avatar {
+  display: inline;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: $Mercury;
+  flex-shrink: 0;
+  &--filled {
+    background-size: contain;
+  }
+  @include tablet {
+    width: 48px;
+    height: 48px;
+  }
+}

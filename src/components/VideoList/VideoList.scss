@@ -7,9 +7,19 @@
 
 .video-list {
   margin: 0 $padding-or-margin;
+  @include tablet {
+    margin: 0 $padding-or-margin-tablet;
+  }
+  @include desktop {
+    width: 30%;
+    border-left: 1px $Mercury solid;
+    padding-left: $padding-or-margin-tablet;
+    margin: 0;
+  }
   &__heading {
-    @include subheader;
+    @include section-header;
     color: $Mercury;
     font-weight: 600;
+    margin: $padding-or-margin-tablet 0;
   }
 }

@@ -23,7 +23,6 @@
 }
 @mixin button__text {
   @include buttons;
-
   color: white;
   flex-grow: 1;
   padding-right: $padding-or-margin;
@@ -32,8 +31,12 @@
 }
 // icon color and text height should follow the text i
 @mixin icon {
-  @include buttons;
-  padding-left: $padding-or-margin;
+  line-height: 18px;
+  height: 100%;
+  padding-right: $half-padding-or-margin;
+  @include tablet {
+    height: 22px;
+  }
 }
 
 @mixin avatar {

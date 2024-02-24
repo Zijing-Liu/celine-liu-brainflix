@@ -6,51 +6,15 @@
 @use "./styles/partials/components" as *;
 .App {
   padding: $padding-or-margin 0;
-}
-.video-player {
-  margin: $padding-or-margin;
-  &__video {
-    width: 100%;
-    margin: 0;
-    height: auto;
-    background-size: cover;
-  }
-}
-.video-info {
-  display: flex;
-  flex-direction: column;
-  gap: $padding-or-margin;
-  margin: $padding-or-margin;
-  &__title {
-    @include page-header;
+  @include tablet {
     padding: 0;
-    margin: 0;
   }
-  &__facts {
-    @include body-copy;
-    padding: $padding-or-margin 0;
-    margin: 0;
+}
+.main-content {
+  @include tablet {
+  }
+  @include desktop {
     display: flex;
-    justify-content: space-between;
-    gap: $padding-or-margin;
-    border-width: 1px 0;
-    border-style: solid;
-    border-color: $Mercury;
-  }
-  &__column {
-    flex-basis: 100%;
-  }
-  &__text {
-    @include body-copy;
-    padding: 0;
-    margin: 0;
-    &--primary {
-      @extend .video-info__text;
-      font-weight: 600;
-    }
-    &--secondary {
-      @extend .video-info__text;
-      color: $Mercury;
-    }
+    margin: 0 $padding-or-margin-desktop;
   }
 }

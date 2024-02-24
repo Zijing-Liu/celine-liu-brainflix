@@ -21,25 +21,16 @@
   font-size: 12px;
   line-height: 20px;
   font-weight: 700;
-  // color: $BandSite-Black;
-  // padding-top: $padding-before-headline;
-  @include tablet {
-    // padding-top: $padding-before-headline-large;
-    font-size: 36px;
-    line-height: 44px;
-  }
 }
 
 @mixin subheader {
   font-family: "Avenir Next LT Pro";
-  font-size: 14px;
+  font-size: 13px;
   line-height: 18px;
   font-weight: 700;
-  // padding-top: $padding;
   @include tablet {
-    // padding-top: $padding-large;
-    font-size: 24px;
-    line-height: 32px;
+    font-size: 14px;
+    line-height: 22px;
   }
 }
 @mixin body-copy {
@@ -60,7 +51,6 @@
   font-family: "Avenir Next LT Pro";
   font-size: 10px;
   line-height: 20px;
-  height: 20px;
   font-weight: 700;
   @include tablet {
     font-size: 12px;

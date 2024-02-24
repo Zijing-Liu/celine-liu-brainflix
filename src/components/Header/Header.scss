@@ -47,12 +47,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    max-width: 300px;
+    width: max-content;
   }
 
   &__search-icon {
     @include icon;
-    padding-right: $half-padding-or-margin;
+    padding-left: $padding-or-margin;
   }
 
   &__search-input {
@@ -65,6 +65,7 @@
   }
   &__button-icon {
     @include icon;
+    padding-left: $half-padding-or-margin;
   }
   &__button-text {
     @include button__text;

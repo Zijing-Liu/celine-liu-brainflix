@@ -1,0 +1,80 @@
+@use "../../styles/partials/font-face" as *;
+@use "../../styles/partials/breakpoints" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/colors" as *;
+@use "../../styles//partials/paddings-margins" as *;
+@use "../../styles/partials/components" as *;
+
+.video-info {
+  display: flex;
+  flex-direction: column;
+  gap: $padding-or-margin;
+  margin: $padding-or-margin;
+  @include tablet {
+    margin: $padding-or-margin-tablet;
+  }
+  @include desktop {
+    margin: 0;
+    padding: $padding-or-margin-tablet 0;
+    width: 70%;
+  }
+  &__title {
+    @include page-header;
+    padding: 0;
+    margin: 0;
+  }
+  &__facts {
+    @include body-copy;
+    padding: $padding-or-margin 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    gap: $padding-or-margin;
+    border-width: 1px 0;
+    border-style: solid;
+    border-color: $Mercury;
+    @include tablet {
+      border-top: 0;
+      padding-top: 0;
+      padding-bottom: $half-padding-or-margin;
+    }
+    @include desktop {
+      padding-right: $padding-or-margin-tablet;
+    }
+  }
+  &__icon {
+    @include icon;
+  }
+  &__facts-column {
+    display: flex;
+    flex-direction: column;
+    gap: $padding-or-margin;
+    flex-basis: 100%;
+    @include tablet {
+      display: flex;
+      flex-direction: row;
+      gap: $padding-or-margin-tablet;
+      flex-basis: auto;
+    }
+  }
+  &__text {
+    @include body-copy;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    @include desktop {
+      padding-right: $padding-or-margin-tablet;
+    }
+    &--primary {
+      @extend .video-info__text;
+      font-weight: 600;
+      padding-right: 0;
+    }
+    &--secondary {
+      @extend .video-info__text;
+      color: $Mercury;
+      padding-right: 0;
+    }
+  }
+}

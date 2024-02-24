@@ -10,9 +10,13 @@
   justify-content: space-between;
   gap: $padding-or-margin;
   margin: $padding-or-margin 0;
+  @include tablet {
+    margin: $padding-or-margin-tablet 0;
+  }
 
   &__image {
-    width: 40%;
+    width: 150px;
+    height: auto;
     border-radius: 4px;
     background-color: $Mercury;
   }
@@ -24,6 +28,8 @@
     justify-content: space-between;
   }
   &__text {
+    display: flex;
+    align-items: center;
     @include body-copy;
     margin: 0;
     &--title {

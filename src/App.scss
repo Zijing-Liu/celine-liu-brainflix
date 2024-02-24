@@ -1,0 +1,51 @@
+@use "./styles/partials/font-face" as *;
+@use "./styles/partials/breakpoints" as *;
+@use "./styles/partials/typography" as *;
+@use "./styles/partials/colors" as *;
+@use "./styles//partials/paddings-margins" as *;
+@use "./styles/partials/components" as *;
+
+.video-player {
+  margin: $padding-or-margin;
+  &__video {
+    width: 100%;
+    margin: 0;
+    height: auto;
+    background-size: cover;
+  }
+}
+.video-info {
+  display: flex;
+  flex-direction: column;
+  gap: $padding-or-margin;
+  margin: $padding-or-margin;
+  &__title {
+    @include page-header;
+    padding: 0;
+    margin: 0;
+  }
+  &__facts {
+    @include body-copy;
+    padding: $padding-or-margin 0;
+    margin: 0;
+    display: flex;
+    justify-content: flex-start;
+    gap: $padding-or-margin;
+    border-width: 2px 0;
+    border-style: solid;
+    border-color: $Mercury;
+  }
+  &__text {
+    @include body-copy;
+    padding: 0;
+    margin: 0;
+    &--primary {
+      @extend .video-info__text;
+      font-weight: 600;
+    }
+    &--secondary {
+      @extend .video-info__text;
+      color: $Mercury;
+    }
+  }
+}

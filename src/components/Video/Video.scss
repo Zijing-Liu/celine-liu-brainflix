@@ -1,0 +1,21 @@
+@use "../../styles/partials/font-face" as *;
+@use "../../styles/partials/breakpoints" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/colors" as *;
+@use "../../styles//partials/paddings-margins" as *;
+@use "../../styles/partials/components" as *;
+
+.video {
+  display: flex;
+  justify-content: space-between;
+  margin: $padding-or-margin;
+  gap: $padding-or-margin;
+  &__image {
+    width: 150px;
+    height: auto;
+    border-radius: 4px;
+    background-color: $Mercury;
+  }
+  &__content {
+  }
+}

@@ -1,7 +1,9 @@
 import Video from "../Video/Video";
+import "./VideoList.scss";
 function VideoList(props) {
   return (
-    <div className="video-list">
+    <section className="video-list">
+      <p className="video-list__heading">NEXT VIDEOS</p>
       {props.videoList.map((video) => {
         if (video.id !== props.activeVideoID) {
           console.log("video.id:", video.id);
@@ -21,7 +23,7 @@ function VideoList(props) {
         }
         return null;
       })}
-    </div>
+    </section>
   );
 }
 export default VideoList;

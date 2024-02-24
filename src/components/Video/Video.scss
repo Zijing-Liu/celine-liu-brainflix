@@ -8,14 +8,28 @@
 .video {
   display: flex;
   justify-content: space-between;
-  margin: $padding-or-margin;
   gap: $padding-or-margin;
+  margin: $padding-or-margin 0;
+
   &__image {
-    width: 150px;
-    height: auto;
+    width: 40%;
     border-radius: 4px;
     background-color: $Mercury;
   }
+
   &__content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  &__text {
+    @include body-copy;
+    margin: 0;
+    &--title {
+      @extend .video__text;
+      @include subheader;
+      font-weight: 600;
+    }
   }
 }

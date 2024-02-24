@@ -34,13 +34,13 @@ function App() {
         <div className="video-info">
           <h1 className="video-info__title">{activeVideo.title}</h1>
           <div className="video-info__facts">
-            <div className="">
+            <div className="video-info__column">
               <p className="video-info__text--primary">{activeVideo.channel}</p>
               <p className="video-info__text--secondary">
                 {new Date(activeVideo.timestamp).toLocaleDateString("en-US")}
               </p>
             </div>
-            <div>
+            <div className="video-info__column">
               <p className="video-info__text--secondary">
                 <span className="icon">
                   <img src={viewsIcon} alt="" />

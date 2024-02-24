@@ -35,10 +35,9 @@
   font-size: 14px;
   line-height: 18px;
   font-weight: 700;
-  color: $BandSite-Black;
-  padding-top: $padding;
+  // padding-top: $padding;
   @include tablet {
-    padding-top: $padding-large;
+    // padding-top: $padding-large;
     font-size: 24px;
     line-height: 32px;
   }

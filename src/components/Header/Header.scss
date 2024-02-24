@@ -17,7 +17,8 @@
 .logo {
   display: flex;
   justify-content: center;
-  padding: 0 $padding-or-margin;
+  // margin: $padding-or-margin 0;
+  // padding: 0 $padding-or-margin;
   align-items: center;
 }
 .navbar {

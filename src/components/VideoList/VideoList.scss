@@ -20,6 +20,9 @@
     @include section-header;
     color: $Mercury;
     font-weight: 600;
-    margin: $padding-or-margin-tablet 0;
+    margin: $padding-or-margin 0;
+    @include tablet {
+      margin: $padding-or-margin-tablet 0;
+    }
   }
 }

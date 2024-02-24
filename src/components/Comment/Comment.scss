@@ -1,0 +1,55 @@
+@use "../../styles/partials/font-face" as *;
+@use "../../styles/partials/breakpoints" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/colors" as *;
+@use "../../styles//partials/paddings-margins" as *;
+@use "../../styles/partials/components" as *;
+
+.comment {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-top: 1px $Mercury solid;
+
+  gap: $padding-or-margin;
+  @include tablet {
+    gap: $padding-or-margin-tablet;
+  }
+  @include desktop {
+    padding-right: $padding-or-margin;
+  }
+  &__avatar {
+    @include avatar;
+    margin: $half-padding-or-margin 0;
+    @include tablet {
+      margin: $padding-or-margin 0;
+    }
+  }
+  &__text {
+    flex-grow: 1;
+    margin: $half-padding-or-margin 0;
+    @include tablet {
+      margin: $padding-or-margin 0;
+    }
+  }
+  &__author {
+    @include subheader;
+    font-size: 600;
+    margin: 0;
+  }
+  &__heading {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__content {
+    @include body-copy;
+    margin: $half-padding-or-margin 0;
+  }
+  &__date {
+    @include body-copy;
+    color: $Mercury;
+    margin: 0;
+  }
+  @include tablet {
+  }
+}

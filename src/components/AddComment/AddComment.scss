@@ -1,0 +1,77 @@
+@use "../../styles/partials/font-face" as *;
+@use "../../styles/partials/breakpoints" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/colors" as *;
+@use "../../styles//partials/paddings-margins" as *;
+@use "../../styles/partials/components" as *;
+.add-comment {
+  &__conversation {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__avatar {
+    &--filled {
+      @extend .add-comment__avatar;
+      @include avatar;
+      background-image: url("../../assets/images/Mohan-muruge.jpg");
+      background-size: cover;
+      margin-top: $padding-or-margin;
+    }
+  }
+  &__form {
+    display: flex;
+    justify-content: space-between;
+    gap: $padding-or-margin;
+    @include tablet {
+      gap: $padding-or-margin-tablet;
+    }
+    @include desktop {
+      padding-right: $padding-or-margin;
+    }
+  }
+  &__input {
+    flex-grow: 1;
+  }
+  &__input-label {
+    @include section-header;
+    color: $Mercury;
+    font-weight: 600;
+  }
+  &__input-container {
+    @include tablet {
+      display: flex;
+      justify-content: space-between;
+      gap: $padding-or-margin-tablet;
+    }
+  }
+  &__input-field {
+    border: 1px $Mercury solid;
+    margin-bottom: $padding-or-margin;
+    border-radius: 4px;
+    width: -webkit-fill-available;
+    padding: $half-padding-or-margin $padding-or-margin;
+    padding-bottom: 72px;
+    background-color: $Alabaster;
+    @include tablet {
+      padding: $half-padding-or-margin $padding-or-margin;
+      align-self: stretch;
+      margin: 0;
+    }
+  }
+  &__button {
+    @include primary-button;
+    width: 100%;
+    @include tablet {
+      flex-basis: auto;
+      width: 200px;
+    }
+  }
+
+  &__button-icon {
+    @include icon;
+    padding-left: $half-padding-or-margin;
+  }
+  &__button-text {
+    @include button__text;
+  }
+}

@@ -20,12 +20,11 @@
   }
   &__title {
     @include page-header;
-    padding: 0;
+    padding-bottom: $padding-or-margin;
     margin: 0;
   }
   &__facts {
     @include body-copy;
-    padding: $padding-or-margin 0;
     margin: 0;
     display: flex;
     justify-content: space-between;
@@ -33,13 +32,15 @@
     border-width: 1px 0;
     border-style: solid;
     border-color: $Mercury;
+    padding-top: $half-padding-or-margin;
+    padding-bottom: $padding-or-margin;
     @include tablet {
       border-top: 0;
       padding-top: 0;
       padding-bottom: $half-padding-or-margin;
     }
     @include desktop {
-      padding-right: $padding-or-margin-tablet;
+      padding-right: $padding-or-margin;
     }
   }
   &__icon {
@@ -48,7 +49,6 @@
   &__facts-column {
     display: flex;
     flex-direction: column;
-    gap: $padding-or-margin;
     flex-basis: 100%;
     @include tablet {
       display: flex;
@@ -60,11 +60,13 @@
   &__text {
     @include body-copy;
     padding: 0;
+    padding-top: $half-padding-or-margin;
     margin: 0;
     display: flex;
     align-items: center;
+
     @include desktop {
-      padding-right: $padding-or-margin-tablet;
+      padding-right: $padding-or-margin;
     }
     &--primary {
       @extend .video-info__text;

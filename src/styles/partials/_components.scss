@@ -4,6 +4,7 @@
 @use "./typography" as *;
 @use "./paddings-margins" as *;
 @mixin primary-button {
+  @include buttons;
   height: 40px;
   width: 100%;
   color: $White;
@@ -31,8 +32,9 @@
 }
 // icon color and text height should follow the text i
 @mixin icon {
-  line-height: 18px;
-  height: 100%;
+  line-height: 24px;
+  height: 18px;
+  width: auto;
   padding-right: $half-padding-or-margin;
   @include tablet {
     height: 22px;

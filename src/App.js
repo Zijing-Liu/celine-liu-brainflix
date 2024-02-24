@@ -21,17 +21,15 @@ function App() {
   return (
     <div className="App">
       <Header />
-
       <MainVideo activeVideo={activeVideo} />
-
-      <section className="main-content">
+      <main className="main-content">
         <MainVideoInfo activeVideo={activeVideo} />
         <VideoList
           videoList={videoList}
           activeVideoID={activeVideo.id}
           changeActiveVideo={changeActiveVideo}
         />
-      </section>
+      </main>
     </div>
   );
 }

@@ -87,3 +87,7 @@
     }
   }
 }
+input:focus::placeholder {
+  color: transparent;
+  border-color: $Alabaster;
+}

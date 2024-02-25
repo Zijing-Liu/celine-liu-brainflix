@@ -57,7 +57,14 @@
       align-self: stretch;
       margin: 0;
     }
+    &__input-field:focus {
+      border-color: black;
+    }
   }
+  input:focus::placeholder {
+    color: transparent;
+  }
+
   &__button {
     @include primary-button;
     width: 100%;

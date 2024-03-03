@@ -1,0 +1,127 @@
+@use "../../styles/partials/font-face" as *;
+@use "../../styles/partials/breakpoints" as *;
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/colors" as *;
+@use "../../styles//partials/paddings-margins" as *;
+@use "../../styles/partials/components" as *;
+
+.upload {
+  display: flex;
+  flex-direction: column;
+  margin: 0 $padding-or-margin;
+  padding: 0;
+  margin-bottom: $padding-or-margin;
+  @include tablet {
+    margin: 0 $padding-or-margin-tablet;
+    margin-bottom: $padding-or-margin-tablet;
+  }
+  @include desktop {
+    margin: 0 $padding-or-margin-desktop;
+    margin-bottom: $padding-or-margin-desktop;
+  }
+  &__heading {
+    @include page-header;
+    margin: 0;
+    padding: $padding-or-margin 0;
+    @include tablet {
+      padding: $padding-or-margin-tablet 0;
+      border-bottom: 1px $Mercury solid;
+      margin-bottom: $padding-or-margin;
+    }
+  }
+  &__subheading {
+    display: inline-block;
+    @include subheader;
+    color: $Mercury;
+    font-weight: 600;
+    margin: 0;
+    @include tablet {
+      padding: $half-padding-or-margin 0;
+    }
+  }
+  &__thumbnail {
+    width: 100%;
+    height: auto;
+    margin-bottom: $padding-or-margin;
+    @include tablet {
+      width: 40vw;
+      height: auto;
+    }
+  }
+  &__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    // gap: $padding-or-margin;
+    @include tablet {
+      // gap: $padding-or-margin-tablet;
+    }
+    @include desktop {
+      //padding-right: $padding-or-margin;
+    }
+  }
+
+  &__input {
+    @include body-copy;
+    display: inline-block;
+    border: 1px $Mercury solid;
+    margin-bottom: $padding-or-margin;
+    border-radius: 4px;
+    width: -webkit-fill-available;
+    padding: $half-padding-or-margin $padding-or-margin;
+    background-color: $Alabaster;
+    @include tablet {
+      padding: $half-padding-or-margin $padding-or-margin;
+      line-height: 28px;
+      align-self: stretch;
+      margin: 0;
+    }
+    &--description {
+      @extend .upload__input;
+      padding-bottom: 72px;
+      @include tablet {
+        margin-bottom: $padding-or-margin-form;
+      }
+    }
+  }
+  &__input:focus {
+    border-color: black;
+  }
+  &__input::placeholder {
+    color: $BrainFlix-Black;
+  }
+  &__buttons {
+    @include tablet {
+      display: flex;
+      justify-content: flex-end;
+      border-top: 1px $Mercury solid;
+      padding-top: $padding-or-margin-form;
+    }
+  }
+  &__publish-button {
+    @include primary-button;
+    margin-top: $padding-or-margin;
+    background-color: $BrainFlix-Blue;
+    width: 100%;
+    @include tablet {
+      flex-basis: auto;
+      width: 200px;
+      margin-top: 0;
+    }
+  }
+  &__cancel-button {
+    @include secondary-button;
+    margin-top: $padding-or-margin;
+    @include tablet {
+      margin-top: 0;
+    }
+  }
+
+  &__button-icon {
+    @include icon;
+    padding-left: $half-padding-or-margin;
+  }
+  &__button-text {
+    @include button__text;
+  }
+}

@@ -5,14 +5,17 @@
 @use "../../styles//partials/paddings-margins" as *;
 @use "../../styles/partials/components" as *;
 .header {
+  border-bottom: 1px $Mercury solid;
+  padding-top: $padding-or-margin;
   @include tablet {
     display: flex;
     justify-content: space-between;
-    margin: 0 $padding-or-margin-tablet;
+    padding-top: 0;
+    padding: 0 $padding-or-margin-tablet;
     align-items: center;
   }
   @include desktop {
-    margin: 0 $padding-or-margin-desktop;
+    padding: 0 $padding-or-margin-desktop;
   }
 }
 .logo {

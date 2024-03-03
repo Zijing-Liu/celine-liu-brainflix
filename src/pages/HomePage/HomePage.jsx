@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 import videoDetail from "../../data/video-details.json";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-
+import "./HomePage.scss";
 function HomePage() {
   const [videoList, setVideoList] = useState([]);
   const API_KEY = "d3264812-4975-47da-8eb7-626943222c00";
@@ -36,7 +36,7 @@ function HomePage() {
   }, [videoID]);
 
   return (
-    <div className="Home">
+    <div className="homepage">
       <MainVideo activeVideo={activeVideo} />
       <section className="main-content">
         <MainVideoInfo activeVideo={activeVideo} />

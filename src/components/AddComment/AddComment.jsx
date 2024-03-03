@@ -26,7 +26,7 @@ function AddComment(props) {
                 <img
                   className="add-comment__button-icon"
                   src={addCommentIcon}
-                  alt="Add a add-comment"
+                  alt="upload button"
                 ></img>
                 <span className="add-comment__button-text">COMMENT</span>
               </button>

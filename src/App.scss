@@ -4,17 +4,8 @@
 @use "./styles/partials/colors" as *;
 @use "./styles//partials/paddings-margins" as *;
 @use "./styles/partials/components" as *;
-.App {
-  padding: $padding-or-margin 0;
-  @include tablet {
-    padding: 0;
-  }
-}
-.main-content {
-  @include tablet {
-  }
-  @include desktop {
-    display: flex;
-    margin: 0 $padding-or-margin-desktop;
-  }
+
+body {
+  margin: 0;
+  padding: 0;
 }

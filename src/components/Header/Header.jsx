@@ -2,12 +2,13 @@ import logo from "../../assets/images/BrainFlix-logo.svg";
 import avatar from "../../assets/images/Mohan-muruge.jpg";
 import searchIcon from "../../assets/images/search.svg";
 import uploadIcon from "../../assets/images/upload.svg";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Header.scss";
 function Navbar() {
+  const navigate = useNavigate();
   return (
     <header className="header">
-      <Link path="/">
+      <Link to="/">
         <div className="logo">
           <img src={logo} alt="Logo" />
         </div>
@@ -29,11 +30,11 @@ function Navbar() {
           />
         </div>
 
-        <button className="navbar__button">
+        <button className="navbar__button" onClick={() => navigate("./upload")}>
           <span className="navbar__button-icon">
             <img src={uploadIcon} alt="" />
           </span>
-          <span className="navbar__button-text">BUTTON</span>
+          <span className="navbar__button-text">UPLOAD</span>
         </button>
         <img
           className="navbar__avatar--tablet"

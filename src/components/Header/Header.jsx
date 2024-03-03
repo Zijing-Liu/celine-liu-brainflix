@@ -2,15 +2,16 @@ import logo from "../../assets/images/BrainFlix-logo.svg";
 import avatar from "../../assets/images/Mohan-muruge.jpg";
 import searchIcon from "../../assets/images/search.svg";
 import uploadIcon from "../../assets/images/upload.svg";
-
+import { Link } from "react-router-dom";
 import "./Header.scss";
 function Navbar() {
   return (
     <header className="header">
-      <div className="logo">
-        <img src={logo} alt="Logo" />
-      </div>
-
+      <Link path="/">
+        <div className="logo">
+          <img src={logo} alt="Logo" />
+        </div>
+      </Link>
       <div className="navbar">
         <div className="navbar__search">
           <div className="navbar__search-box">

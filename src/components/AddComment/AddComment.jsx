@@ -7,7 +7,10 @@ function AddComment(props) {
         <form className="add-comment__form" action="POST">
           <div className="add-comment__avatar--filled"></div>
           <div className="add-comment__input">
-            <label className="add-comment__input-label" for="user-add-comment">
+            <label
+              className="add-comment__input-label"
+              htmlFor="user-add-comment"
+            >
               JOIN THE CONVERSATION
             </label>
             <div className="add-comment__input-container">

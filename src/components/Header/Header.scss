@@ -9,6 +9,7 @@
     display: flex;
     justify-content: space-between;
     margin: 0 $padding-or-margin-tablet;
+    align-items: center;
   }
   @include desktop {
     margin: 0 $padding-or-margin-desktop;

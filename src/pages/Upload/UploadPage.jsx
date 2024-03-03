@@ -6,38 +6,47 @@ function UploadPage() {
   return (
     <div className="upload">
       <h1 className="upload__heading">Upload Video</h1>
-      <h2 className="upload__subheading">VIDEO THUMBNAIL</h2>
-      <img
-        className="upload__thumbnail"
-        src={uploadImagePreive}
-        alt="video thumbnail"
-      />
       <form className="upload__form" action="">
-        <label className="upload__subheading" htmlFor="title">
-          TITLE YOUR VIDEO
-        </label>
+        <div className="upload__form-content">
+          <div className="upload__thumbnail-component">
+            <label className="upload__subheading">VIDEO THUMBNAIL</label>
 
-        <input
-          className="upload__input"
-          type="text"
-          name="title"
-          placeholder="Add a title to your video"
-        />
+            <img
+              className="upload__thumbnail"
+              src={uploadImagePreive}
+              alt="video thumbnail"
+            />
+          </div>
+          <div className="upload__input-component">
+            <label className="upload__subheading" htmlFor="title">
+              TITLE YOUR VIDEO
+            </label>
+            <span>
+              <input
+                className="upload__input"
+                type="text"
+                name="title"
+                placeholder="Add a title to your video"
+              />
+            </span>
 
-        <label
-          className="upload__subheading"
-          htmlFor="description"
-          placeholder="Add a title to your video"
-        >
-          ADD A VIDEO DESCRIPTION
-        </label>
-
-        <input
-          className="upload__input--description"
-          type="text"
-          name="description"
-          placeholder="Add a description to your video"
-        />
+            <label
+              className="upload__subheading"
+              htmlFor="description"
+              placeholder="Add a title to your video"
+            >
+              ADD A VIDEO DESCRIPTION
+            </label>
+            <span>
+              <input
+                className="upload__input--description"
+                type="text"
+                name="description"
+                placeholder="Add a description to your video"
+              />
+            </span>
+          </div>
+        </div>
         <div className="upload__buttons">
           <button className="upload__publish-button" type="submit">
             <img

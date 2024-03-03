@@ -25,8 +25,6 @@
     padding: $padding-or-margin 0;
     @include tablet {
       padding: $padding-or-margin-tablet 0;
-      border-bottom: 1px $Mercury solid;
-      margin-bottom: $padding-or-margin;
     }
   }
   &__subheading {
@@ -47,18 +45,33 @@
       width: 40vw;
       height: auto;
     }
+    @include desktop {
+      width: 25vw;
+    }
   }
   &__form {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    // gap: $padding-or-margin;
+  }
+  &__form-content {
     @include tablet {
-      // gap: $padding-or-margin-tablet;
+      border-top: 1px $Mercury solid;
+      border-bottom: 1px $Mercury solid;
     }
     @include desktop {
-      //padding-right: $padding-or-margin;
+      display: flex;
+      gap: $padding-or-margin-form;
+
+      padding: $padding-or-margin-form 0;
     }
+  }
+  &__thumbnail-component {
+    display: flex;
+    flex-direction: column;
+  }
+  &__input-component {
+    flex-grow: 1;
   }
 
   &__input {
@@ -94,7 +107,6 @@
     @include tablet {
       display: flex;
       justify-content: flex-end;
-      border-top: 1px $Mercury solid;
       padding-top: $padding-or-margin-form;
     }
   }

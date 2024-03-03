@@ -9,7 +9,11 @@ function VideoList(props) {
       {props.videoList.map((video) => {
         if (props.activeVideoID !== video.id) {
           return (
-            <Link to={`/video/${video.id}`} key={video.id}>
+            <Link
+              to={`/video/${video.id}`}
+              key={video.id}
+              className="video-element"
+            >
               <Video
                 id={video.id}
                 title={video.title}

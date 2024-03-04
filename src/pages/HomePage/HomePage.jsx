@@ -18,16 +18,16 @@ function HomePage() {
       const response = await axios.get(
         `https://unit-3-project-api-0a5620414506.herokuapp.com/videos/?api_key=${API_KEY}`
       );
-      console.log("response is", response.data);
       const videos = response.data;
+      // get the default video to display on page
       if (videos.length > 0) {
         const firstVideoId = videos[0].id;
         const response = await axios.get(
           `https://unit-3-project-api-0a5620414506.herokuapp.com/videos/${firstVideoId}?api_key=${API_KEY}`
         );
-        console.log("active video response is", response.data);
         setActiveVideo(response.data);
       }
+      // update states
       setVideoList(videos);
       setLoaded(true);
     } catch (error) {
@@ -36,7 +36,7 @@ function HomePage() {
   };
 
   // get the params in url to locate currentVideo (video selected by the user))
-  const { videoID } = useParams(); // the whole component will render when it changes
+  const { videoID } = useParams();
   // Fetch details of the activeVideo when videoID changes
   const findActiveVideo = async () => {
     try {
@@ -57,8 +57,6 @@ function HomePage() {
     findActiveVideo();
   }, [videoID]); // Fetch the active video when the videoID param changes
 
-  console.log("videoList", videoList);
-  console.log("activate video is ", activeVideo);
   if (!loaded) {
     return <div></div>;
   } else {

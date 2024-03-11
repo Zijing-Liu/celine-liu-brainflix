@@ -11,18 +11,13 @@ function UploadPage() {
   const navigate = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(e);
     const formData = {
       title: titleRef.current.value,
       description: desRef.current.value,
+      imagePath: uploadImagePreive,
     };
-
     try {
-      const response = await axios.post(
-        `${baseUrl}/videos`,
-        JSON.stringify(formData)
-      );
-      console.log("Response:", response.data);
+      const response = await axios.post(`${baseUrl}/videos`, formData);
       alert("successfully uploaded a new viedo");
     } catch (error) {
       console.error("Error:", error);
@@ -32,7 +27,7 @@ function UploadPage() {
   return (
     <div className="upload">
       <h1 className="upload__heading">Upload Video</h1>
-      <form className="upload__form">
+      <form className="upload__form" onSubmit={handleSubmit}>
         <div className="upload__form-content">
           <div className="upload__thumbnail-component">
             <label className="upload__subheading">VIDEO THUMBNAIL</label>
@@ -75,11 +70,7 @@ function UploadPage() {
           </div>
         </div>
         <div className="upload__buttons">
-          <button
-            className="upload__publish-button"
-            type="submit"
-            onClick={handleSubmit}
-          >
+          <button className="upload__publish-button" type="submit">
             <img
               src={uploadIcon}
               alt="upload icon"

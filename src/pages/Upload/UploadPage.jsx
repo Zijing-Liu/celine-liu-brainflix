@@ -3,10 +3,12 @@ import "./UploadPage.scss";
 import uploadImagePreive from "../../assets/images/Upload-video-preview.jpg";
 import uploadIcon from "../../assets/images/upload.svg";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 function UploadPage() {
   const baseUrl = process.env.REACT_APP_BASE_URL;
   const titleRef = useRef("");
   const desRef = useRef("");
+  const navigate = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
     const formData = {
@@ -80,7 +82,11 @@ function UploadPage() {
             <span className="upload__button-text">PUBLISH</span>
           </button>
 
-          <button className="upload__cancel-button" type="submit">
+          <button
+            className="upload__cancel-button"
+            type="submit"
+            onClick={() => navigate("/videos")}
+          >
             CANCEL
           </button>
         </div>

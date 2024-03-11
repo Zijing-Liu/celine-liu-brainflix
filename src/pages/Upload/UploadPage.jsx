@@ -23,8 +23,10 @@ function UploadPage() {
         JSON.stringify(formData)
       );
       console.log("Response:", response.data);
+      alert("successfully uploaded a new viedo");
     } catch (error) {
       console.error("Error:", error);
+      alert(error);
     }
   };
   return (

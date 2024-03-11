@@ -1,8 +1,26 @@
-import React from "react";
+import React, { useRef } from "react";
 import "./UploadPage.scss";
 import uploadImagePreive from "../../assets/images/Upload-video-preview.jpg";
 import uploadIcon from "../../assets/images/upload.svg";
+import axios from "axios";
 function UploadPage() {
+  const baseUrl = process.env.REACT_APP_BASE_URL;
+  const titleRef = useRef("");
+  const desRef = useRef("");
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const formData = {
+      title: titleRef.current.value,
+      description: desRef.current.value,
+    };
+    try {
+      const response = await axios.post(`${baseUrl}/videos`, formData);
+      console.log("Response:", response.data);
+    } catch (error) {
+      console.error("Error:", error);
+      // Handle error
+    }
+  };
   return (
     <div className="upload">
       <h1 className="upload__heading">Upload Video</h1>
@@ -10,7 +28,6 @@ function UploadPage() {
         <div className="upload__form-content">
           <div className="upload__thumbnail-component">
             <label className="upload__subheading">VIDEO THUMBNAIL</label>
-
             <img
               className="upload__thumbnail"
               src={uploadImagePreive}
@@ -27,6 +44,7 @@ function UploadPage() {
                 type="text"
                 name="title"
                 placeholder="Add a title to your video"
+                ref={titleRef}
               />
             </span>
 
@@ -43,12 +61,17 @@ function UploadPage() {
                 type="text"
                 name="description"
                 placeholder="Add a description to your video"
+                ref={desRef}
               />
             </span>
           </div>
         </div>
         <div className="upload__buttons">
-          <button className="upload__publish-button" type="submit">
+          <button
+            className="upload__publish-button"
+            type="submit"
+            onSubmit={handleSubmit}
+          >
             <img
               src={uploadIcon}
               alt="upload icon"
